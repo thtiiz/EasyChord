@@ -54,7 +54,8 @@ request.post(authOptions, function(error, response, body) {
 app.get('/token/', cors(), async (req, res, next) => {
   try {
     // const moo = cowsay.say({ text: 'Hello World!' })
-    res.json({token})
+    var acctoken = {token};
+    res.json(acctoken);
   } catch (err) {
     next(err)
   }
