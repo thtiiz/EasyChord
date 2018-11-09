@@ -4,16 +4,6 @@ const cors = require('cors')
 const request = require('request')
 // Create the server
 const app = express()
-const path = require('path')
-
-// Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, 'client/build')))
-
-// Anything that doesn't match the above, send back index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'))
-})
-
 
 var client_id = '867521c942e94dc3a5c3fe2ec399e307'; // Your client id
 var client_secret = 'c05d16f9fc7140c28ea321a38a6536b8'; // Your secret
@@ -51,7 +41,15 @@ app.get('/token/', cors(), async (req, res, next) => {
     next(err)
   }
 })
+const path = require('path')
 
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, 'client/build')))
+
+// Anything that doesn't match the above, send back index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+})
 // Choose the port and start the server
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
