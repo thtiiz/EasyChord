@@ -7,22 +7,13 @@ const app = express()
 const path = require('path')
 
 // Serve static files from the React frontend app
-// app.use(express.static(path.join(__dirname, 'client/build')))
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 // Anything that doesn't match the above, send back index.html
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname + '/client/build/index.html'))
-// })
-// Serve our api route /cow that returns a custom talking text cow
-// app.get('/api/cow/:say', cors(), async (req, res, next) => {
-//   try {
-//     const text = req.params.say
-//     const moo = cowsay.say({ text })
-//     res.json({ moo })
-//   } catch (err) {
-//     next(err)
-//   }
-// })
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+})
+
 
 var client_id = '867521c942e94dc3a5c3fe2ec399e307'; // Your client id
 var client_secret = 'c05d16f9fc7140c28ea321a38a6536b8'; // Your secret
