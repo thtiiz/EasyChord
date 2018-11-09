@@ -3,50 +3,39 @@ import './App.css'
 
 class App extends Component {
   state = {
-    cow: '',
-    text: ''
+    token: '-'
   }
 
 componentDidMount() {
-    this.fetchCow()
+    this.fetchToken()
   }
 
-fetchCow = async () => {
+fetchToken = async () => {
     const response = await fetch(`/api/cow`)
-    const initialCow = await response.json()
-    const cow = initialCow.moo
-    this.setState({ cow })
+    const gettoken = await response.json()
+    const token = gettoken.token
+    this.setState({ token })
   }
 
-customCow = async evt => {
-    evt.preventDefault()
-    const text = this.state.text
-    const response = await fetch(`/api/cow/${text}`)
-    const custom = await response.json()
-    const cow = custom.moo
-    this.setState({ cow, text: '' })
-  }
+// customCow = async evt => {
+//     evt.preventDefault()
+//     const text = this.state.text
+//     const response = await fetch(`/api/cow/${text}`)
+//     const custom = await response.json()
+//     const cow = custom.moo
+//     this.setState({ cow, text: '' })
+//   }
 
-handleChange = evt => {
-    this.setState({ [evt.target.name]: evt.target.value })
-    console.log(this.state.text)
-  }
+// handleChange = evt => {
+//     this.setState({ [evt.target.name]: evt.target.value })
+//     console.log(this.state.text)
+//   }
 
 render() {
     return (
       <div className="App">
-        <h3>Text Cow. Moo</h3>
-        <code>{this.state.cow}</code>
-        <form onSubmit={this.customCow}>
-          <label>Custom Cow Text:</label>
-          <input
-            type="text"
-            name="text"
-            value={this.state.text}
-            onChange={this.handleChange}
-          />
-          <button type="submit">Show me a talking cow!</button>
-        </form>
+        <h1>{this.state.token}</h1>
+        {/* <button onClick={this.fetchToken}>Get token</button> */}
       </div>
     )
   }
