@@ -1,0 +1,17 @@
+.Search{
+    
+}
+
+#search-icon{
+    width: 50px;
+    margin: 20px; 
+}
+
+input {
+    font-size: 1.5em;
+    border-top-style: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: 0px;
+    border-bottom: 2px solid grey;
+  }
