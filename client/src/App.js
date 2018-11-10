@@ -27,8 +27,9 @@ render() {
     // const parsed = queryString.parse(this.props.location.search)
     return (
       <div className="App">
-        <Route exact path="/" component={Home} />
-        <Route path="/search" component={()=><Search token={this.state.token}/>} />
+        {/* <Route exact path="/" component={Home} /> */}
+        <Route exact path="/" component={()=><Search token={this.state.token}/>} />
+        {/* <Route path="/search" component={()=><Search token={this.state.token}/>} /> */}
         <Route path="/upload" component={Upload} />
       </div>
     )
