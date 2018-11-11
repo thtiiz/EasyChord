@@ -85,7 +85,7 @@ class Process extends Component {
                 <button onClick={this.lowerkey}>-</button>
             </div>
             <h3>Key: {this.state.keyTrack +' '+ this.state.mode}</h3>
-            {this.state.click? <div class="alert alert-success">{renderData}</div>:''}
+            {this.state.click? <div className="alert alert-success">{renderData}</div>:''}
         </div>
         );
     }
