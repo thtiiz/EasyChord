@@ -1,7 +1,9 @@
 li{
     list-style: none;
 }
-
+.songName{
+    margin:30px;
+}
 .alert-success{
     background-color: rgba(212, 237, 218, 0.39);
 }
