@@ -19,7 +19,7 @@ class Process extends Component {
         this.getDataTrack = this.getDataTrack.bind(this)
         this.upperkey = this.upperkey.bind(this)
         this.lowerkey = this.lowerkey.bind(this)
-        console.log('idtrackInchord:'+this.props.idTrack, 'Token:'+this.props.token)
+        console.log('idtrackInchord:' + this.props.idTrack, 'Token:'+this.props.token)
     }
 
     getDataTrack(){

@@ -1,5 +1,13 @@
-.searchBar{
-    
+#result{
+    -webkit-animation-delay: 1s;
+    text-decoration: none;
+    color: #7f6cc4;
+}
+#result:hover{
+    color: #5c47a8;
+}
+#artist{
+    color: #4c976b;
 }
 
 #search-icon{

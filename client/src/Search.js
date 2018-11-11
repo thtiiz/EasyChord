@@ -66,9 +66,9 @@ class Search extends Component {
     const items = this.state.track.map((name, index) =>
       <tr key={index}>
         <th scope="row" >{index}</th>
-        <td><a href={'/upload/?id='+ this.state.ids[Number(index)]+ '&name='+this.state.names[Number(index)]+'&token=' +this.props.token} 
+        <td><a id="result" href={'/upload/?id='+ this.state.ids[Number(index)]+ '&name='+this.state.names[Number(index)]+'&token=' +this.props.token} 
         onClick={this.handleClickTrack}>{name}</a></td>
-        <td>{'@'+this.state.artists[Number(index)]}</td>
+        <td><p1 id="artist"><strong>@</strong>{this.state.artists[Number(index)]}</p1></td>
       </tr>
     )
     return (
