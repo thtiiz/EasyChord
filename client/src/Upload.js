@@ -28,16 +28,16 @@ class Upload extends Component {
     widget.open();
   }
 
-  componentDidMount() {
-    this.fetchToken()
-  }
+  // componentDidMount() {
+  //   this.fetchToken()
+  // }
 
-  fetchToken = async () => {
-    const response = await fetch('http://localhost:3000/token')
-    const getToken = await response.json()
-    const token = getToken.token
-    this.setState({ token })
-  }
+  // fetchToken = async () => {
+  //   const response = await fetch('http://localhost:3000/token')
+  //   const getToken = await response.json()
+  //   const token = getToken.token
+  //   this.setState({ token })
+  // }
 
   render() {
     const values = queryString.parse(this.props.location.search)
@@ -45,7 +45,7 @@ class Upload extends Component {
     return (
       <div className="Upload">
           <div className="SearchUpload">
-            <Search token={this.state.token}/>
+            <Search token={values.token}/>
             <button onClick={this.widget} className="btn">Upload</button>
             <p className="alert alert-info">Capture your screen with Chord and Upload</p>
           </div>
