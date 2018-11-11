@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as Key from "tonal-key";
-import * as Distance from "tonal-distance";
 import * as Chromatic from 'chromatic';
 import axios from 'axios';
 import './Process.css';
