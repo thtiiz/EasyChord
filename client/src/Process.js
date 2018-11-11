@@ -75,8 +75,8 @@ class Process extends Component {
         )
         return (
         <div className="Process">
-            <div className="songName">
-            <h2>Song : {this.props.name}</h2>
+            <div className="songName ">
+            <h2 >Song : {this.props.name}</h2>
             </div>
             
             <div className="buttonOption">
